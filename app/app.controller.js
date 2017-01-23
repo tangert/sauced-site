@@ -1,20 +1,19 @@
-app.controller('MenuController', MenuController);
-          
-MenuController.$inject = ['$scope'];
+app.controller('MainController', MainController);
 
-    function MenuController($scope) {
-
-        var _this = this;
-
-        _this.mainOptions = {
-          sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+    function MainController() {
+        var vm = this
+        
+        vm.mainOptions = {
+          sectionsColor: ['white', 'white', 'white', 'white'],
                 anchors: ['section1', 'section2', 'section3', 'section4'],
-                menu: '#nav'
+                menu: '#nav',
+                navigation: true,
+                navigationPosition: 'right',
+                scrollingSpeed: 1000
         };
         
-        $scope.date = new Date();
-        
-        $scope.menu =
+        vm.date = new Date();
+        vm.menu =
             {
                  starters: [
                      {
@@ -39,11 +38,3 @@ MenuController.$inject = ['$scope'];
 
             };
 }
-
-function getMonday(d) {
-  d = new Date(d);
-  var day = d.getDay(),
-      diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
-  return new Date(d.setDate(diff));
-}
-    
