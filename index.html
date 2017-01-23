@@ -22,13 +22,15 @@
     
     <body ng-controller = "MainController as vm">
           
-           <!--NAVIGATION-->
-             <ul class = "nav">
-                <li data-anchor="section1"><a href = "#home">Sauced</a></li>
-                <li data-anchor="section2"><a href = "#about">About</a></li>
-                <li data-anchor="section3"><a href = "#menu">Menu</a></li>
-                <li data-anchor="section4"><a href = "#contact">Contact</a></li>
-            </ul>
+    <!--NAVIGATION-->
+        <div id = "nav-wrapper">
+         <ul class = "nav">
+            <li data-anchor="section1"><a href = "#home">Sauced</a></li>
+            <li data-anchor="section2"><a href = "#about">About</a></li>
+            <li data-anchor="section3"><a href = "#menu">Menu</a></li>
+            <li data-anchor="section4"><a href = "#contact">Contact</a></li>
+        </ul>
+        </div>
             
         <div full-page options="vm.fullPageOptions">
 
@@ -83,7 +85,9 @@
               <h1 class = "contact-form"><span style = "font-size: 90px;">Contact</span></h1>
                <form>
                
-                <h2 class = "contact-form">First name <input type = "text" name = "first-name"</h2>
+               <div id = "firstname-group" class = "form-group" ng-class = "{'has-error': 'first-name-error'}">                    <h2 class = "contact-form">First name <input type = "text" name = "first-name"</h2>
+               </div>
+
                 <h2 class = "contact-form">Last name <input type = "text" name = "last-name"</h2>
                 <h2 class = "contact-form" >Email <input type = "email" name = "email"</h2>
                 

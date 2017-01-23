@@ -9,8 +9,9 @@ app.controller('MainController', MainController);
                 menu: '#nav',
                 navigation: false,
                 navigationPosition: 'right',
-                
-                scrollingSpeed: 500
+                scrollingSpeed: 500,
+                autoScrolling: false
+
         };
         
         vm.date = new Date();
