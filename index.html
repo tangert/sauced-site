@@ -10,7 +10,8 @@
         
         <link rel="stylesheet" href="vendor/fullpage.js/jquery.fullPage.css">
         <link rel = "stylesheet" href = "css/styles.css">
-
+        <link rel = "stylesheet" href = "css/mobile-styles.css">
+        <link rel = "stylesheet" href = "css/tablet.styles.css">
 
         <!--Mobile sizing-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,24 +21,23 @@
     </head>
     
     <body ng-controller = "MainController as vm">
-        <div full-page options="vm.mainOptions">
-     
-    <!--NAVIGATION-->
-            <div id = "nav-wrap">
-             <ul id="nav">
-                <li data-anchor="section1"><a href = "#/home">Home</a></li>
-                <li data-anchor="section2"><a href = "#/about">About</a></li>
-                <li data-anchor="section3"><a href = "#/menu">Menu</a></li>
-                <li data-anchor="section4"><a href = "#/contact">Contact</a></li>
+          
+           <!--NAVIGATION-->
+             <ul class = "nav">
+                <li data-anchor="section1"><a href = "#home">Sauced</a></li>
+                <li data-anchor="section2"><a href = "#about">About</a></li>
+                <li data-anchor="section3"><a href = "#menu">Menu</a></li>
+                <li data-anchor="section4"><a href = "#contact">Contact</a></li>
             </ul>
-            </div>
+            
+        <div full-page options="vm.fullPageOptions">
 
           <br>
 
     <!--HOME-->
-          <div class = "section" id = "home-section">
-             <h1>Sauced</h1>
-             <h4>A supper club</h4>
+          <div class = "section active" id = "home-section">
+             <h1 style = "font-size: 200px; text-align: center">Sauced</h1>
+             <h4 style = "font-size: 50px; text-align: center">a supper club</h4>
 
           </div>
 
@@ -49,39 +49,53 @@
 
     <!--MENU-->
           <div class = "section" id = "menu-section">
-                    <h1><span style = "opacity:0.9">Menu of</span> {{ date | date:'MMMM d, y' }}</h1>
-                     <h3>Start</h3>
-                     <!--APPETIZERS-->
-                     <div id = "starters">
-                         <div ng-repeat = "starter in vm.menu.starters">
-                             <h2> {{ starter.name }} </h2>
-                             <h4> {{ starter.desc }} </h4>
-                        </div>
+            <h1>Menu of {{ vm.date | date:'MMMM d, y' }}</h1>
+                 <h3>Start</h3>
+                 <!--APPETIZERS-->
+                 <div id = "starters">
+                     <div ng-repeat = "starter in vm.menu.starters">
+                         <h2> {{ starter.name }} </h2>
+                         <h4> {{ starter.desc }} </h4>
                     </div>
+                </div>
 
-                     <br><br>
+                 <br><br>
 
-                     <!--MAIN COURSE-->
-                     <h3>Share</h3>
-                     <div id = "share">
-                         <h2> {{ vm.menu.share.name }} </h2>
-                         <h4> {{ vm.menu.share.desc }} </h4>
-                     </div>
+                 <!--MAIN COURSE-->
+                 <h3>Share</h3>
+                 <div id = "share">
+                     <h2> {{ vm.menu.share.name }} </h2>
+                     <h4> {{ vm.menu.share.desc }} </h4>
+                 </div>
 
-                     <br><br>
+                 <br><br>
 
-                     <!--DESERT-->
-                     <h3>Surrender</h3>
-                     <div id = "surrender">
-                         <h2> {{ vm.menu.surrender.name }} </h2>
-                         <h4> {{ vm.menu.surrender.desc }} </h4>
-                     </div>
+                 <!--DESERT-->
+                 <h3>Surrender</h3>
+                 <div id = "surrender">
+                     <h2> {{ vm.menu.surrender.name }} </h2>
+                     <h4> {{ vm.menu.surrender.desc }} </h4>
+                 </div>
           </div>
 
     <!--CONTACT-->
           <div class = "section" id = "contact-section">
-              <h1>Contact</h1>
-              
+              <h1 class = "contact-form"><span style = "font-size: 90px;">Contact</span></h1>
+               <form>
+               
+                <h2 class = "contact-form">First name <input type = "text" name = "first-name"</h2>
+                <h2 class = "contact-form">Last name <input type = "text" name = "last-name"</h2>
+                <h2 class = "contact-form" >Email <input type = "email" name = "email"</h2>
+                
+                <br><br>
+                
+                <textarea rows="6" cols="50" name="message" placeholder="What's up?" maxlength="300"></textarea>
+                 <br><br>
+                  <button type="submit" class="btn btn-lg btn-block">Send away</button>
+                
+                </form>
+                    
+                      
           </div>
         
         </div>
@@ -99,6 +113,7 @@
         <script src="app/app.module.js"></script>
         <script src="app/app.config.js"></script>
         <script src="app/app.controller.js"></script>
+        <script src = "php/mail.php"></script>
     </foot>
     
     

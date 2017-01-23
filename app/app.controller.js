@@ -3,16 +3,18 @@ app.controller('MainController', MainController);
     function MainController() {
         var vm = this
         
-        vm.mainOptions = {
-          sectionsColor: ['white', 'white', 'white', 'white'],
-                anchors: ['section1', 'section2', 'section3', 'section4'],
+        vm.fullPageOptions = {
+          sectionsColor: ['white', 'white', 'white', 'rgba(0,0,0,0.8)'],
+                anchors: ['home', 'about', 'menu', 'contact'],
                 menu: '#nav',
-                navigation: true,
+                navigation: false,
                 navigationPosition: 'right',
-                scrollingSpeed: 1000
+                
+                scrollingSpeed: 500
         };
         
         vm.date = new Date();
+        
         vm.menu =
             {
                  starters: [

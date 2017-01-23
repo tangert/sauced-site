@@ -1,92 +1,136 @@
 /*Navigation*/
-#nav-wrap {
-    position:relative;
-    padding: 20px;
-    margin-top: 10px;
-}
-#nav {
-    position:absolute;
-    left:50%;top:0;
-    margin-left:-375px; /* negative margin equal to half the width */
-    width:100%;
-    list-style:none;
-}
-#nav li {
-    float:left;
-}
-#nav a {
-    display:inline-block;
-    text-align:center;
-    width:150px; /* fixed width */
-    text-decoration:none; 
-}
+    .nav{
+        border-width:1px 0;
+        list-style:none;
+        margin:0;
+        text-align:center;
+        overflow: hidden;
+        z-index: 999;
+        backdrop-filter: blur(5px);
+
+    }
+
+    .nav li{
+        display:inline-block;
+        font-family: baskerville;
+        z-index: 999;
+        padding: 10px;
+        font-size: 20px;
+
+    }
+    .nav a{
+        display:inline-block;
+        padding:50px;
+        color: rgba(0,0,0,0.8);
+        border-radius: 5px;
+        transition: 0.2s ease-in-out;
+
+    }
+
+    .nav li a:hover {
+        color: white;
+        background-color: rgba(0,0,0,0.8);
+    }
 
 /*Home styling*/
-#home-section {
-}
+    #home-section {
+    }
 
-#home-section h1 {
-    font-size: 50px;
-}
+    #home-section h1 {
+        font-size: 50px;
+    }
 
-img {
-    height: 100%;
-    width: 100%;
-}
+    img {
+        height: 100%;
+        width: 100%;
+    }
 
 /*About styling*/
-#about-section {
-}
+    #about-section {
+    }
 
-#about-section h1 {
-    font-size: 50px;
-}
+    #about-section h1 {
+        font-size: 50px;
+    }
 
-.sauce-style {
-    font-family: baskerville;
-    font-size: 18px;
-}
+    .sauce-style {
+        font-family: baskerville;
+        font-size: 18px;
+    }
 
 /*Menu styling*/
-#menu-section {
-}
+    #menu-section {
+    }
 
-h1, h2, h3 {
-    font-family: baskerville;
-}
+    h1, h2, h3 {
+        font-family: baskerville;
+    }
 
-p, h4 {
-    font-family: gotham-light;
-    opacity: 0.7;
-}
+    p, h4 {
+        font-family: gotham-light;
+        opacity: 0.7;
+    }
 
-h2 {
-    color: rgba(0,0,0,0.7);
-}
+    h2 {
+        color: rgba(0,0,0,0.7);
+    }
 
-h3 {
-    letter-spacing: 10px;
-    text-transform: lowercase;
-    color: lightsteelblue;
-    font-size: 20px;
-}
+    h3 {
+        letter-spacing: 10px;
+        text-transform: lowercase;
+        color: indianred;
+        font-size: 20px;
+    }
 
-h4 {
-    opacity: 0.4;
-    font-family:;
-}
+    h4 {
+        opacity: 0.4;
+        font-family:;
+    }
 
-#starters, #share, #surrender {
-    margin-top: -15px;
-}
+    #starters, #share, #surrender {
+        margin-top: -15px;
+    }
 
 /*Contact styling*/
-#contact-section {
-}
+    #contact-section {
+        color: white;
+    }
+    .contact-form {
+        color: white;
+    }
 
+    input {
+        background-color: inherit;
+        border: 0;
+        border-bottom: 2px solid rgba(255,255,255,0.7);
+        outline: 0;
+        width: 50%;
+    }
+    
+    textarea {
+        width: 100%;
+        background-color: inherit;
+        border-style: none;
+    }
+    
+    .btn {
+        padding: 10px;
+        font-size: 30px;
+        background-color: inherit;
+        border-color: white;
+        transition: 0.2s;
+    }
+    
+    .btn:hover {
+        background-color: white;
+        color: black;
+    }
 
 /*Misc*/
+    #home-section, #about-section, #menu-section, #contact-section {
+        padding: 20px;
+    }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-      display: none !important;
-}
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+    }
