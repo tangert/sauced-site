@@ -1,0 +1,100 @@
+/*Navigation*/
+#nav-wrap {
+    position:relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+#nav {
+    position:absolute;
+    left:50%;top:0;
+    margin-left:-375px; /* negative margin equal to half the width */
+    width:100%;
+    list-style:none;
+}
+#nav li {
+    float:left;
+}
+#nav a {
+    display:inline-block;
+    text-align:center;
+    width:150px; /* fixed width */
+    text-decoration:none; 
+}
+
+/*Home styling*/
+#home-section {
+    padding-bottom: 200px;
+    padding-left: 20px;
+}
+
+#home-section h1 {
+    font-size: 50px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+/*About styling*/
+#about-section {
+    padding-bottom: 200px;
+    padding-left: 20px;
+}
+
+#about-section h1 {
+    font-size: 50px;
+}
+
+.sauce-style {
+    font-family: baskerville;
+    font-size: 18px;
+}
+
+/*Menu styling*/
+#menu-section {
+    padding-bottom: 200px;
+    padding-left: 20px;
+}
+
+h1, h2, h3 {
+    font-family: baskerville;
+}
+
+p, h4 {
+    font-family: gotham-light;
+    opacity: 0.7;
+}
+
+h2 {
+    color: rgba(0,0,0,0.7);
+}
+
+h3 {
+    letter-spacing: 10px;
+    text-transform: lowercase;
+    color: lightsteelblue;
+    font-size: 20px;
+}
+
+h4 {
+    opacity: 0.4;
+    font-family:;
+}
+
+#starters, #share, #surrender {
+    margin-top: -15px;
+}
+
+/*Contact styling*/
+#contact-section {
+    padding-bottom: 200px;
+    padding-left: 20px;
+}
+
+
+/*Misc*/
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+}
