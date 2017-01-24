@@ -1,7 +1,5 @@
 /*Navigation*/
-
     .nav{
-        border-width:1px 0;
         list-style:none;
         text-align:center;
         overflow: hidden;
@@ -115,6 +113,8 @@
         width: 100%;
         background-color: inherit;
         border-style: none;
+        font-family: baskerville;
+        font-size: 30px;
     }
     
     .btn {
@@ -123,6 +123,7 @@
         background-color: inherit;
         border-color: white;
         transition: 0.2s;
+        font-family: baskerville;
     }
     
     .btn:hover {
