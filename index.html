@@ -15,6 +15,7 @@
 
         <!--Mobile sizing-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "php/mail.php"></script>
         
         <title>Sauced</title>
     
@@ -38,21 +39,25 @@
 
     <!--HOME-->
           <div class = "section active" id = "home-section">
-             <h1 style = "font-size: 200px; text-align: center">Sauced</h1>
-             <h4 style = "font-size: 50px; text-align: center">a supper club</h4>
+             <h1> Sauced<span style = "color: crimson">.</span></h1>
+             <h4> a supper club</h4>
 
           </div>
 
     <!--ABOUT-->
           <div class = "section" id = "about-section">
-              <h1>About</h1>
-              <p>We started as a few Emory students who are passionate about good food. Today, we introduce <span class = "sauce-style">Sauced</span>, a supper club for the money-conscious millenial who loves to eat well and escape the daily routine of Chipotle or Starbucks.</p>
+              <h1 class = "section-header">About</h1>
+              <p>We are a few Emory students who are passionate about good food. Today, we introduce <span class = "sauce-style">Sauced</span>, a supper club for the money-conscious millenial who loves to eat well and escape the daily routine of Chipotle or Starbucks.</p>
+              
+              
           </div>
 
     <!--MENU-->
-         <div ng-controller = "MenuController as vm">
           <div class = "section" id = "menu-section">
-            <h1>Menu of {{ vm.date | date:'MMMM d, y' }}</h1>
+            <div ng-controller = "MenuController as vm">
+
+            <h1 class = "section-header" >Menu</h1>
+                <h2 id = "date">{{ vm.date | date:'MMMM d, y' }}</h2>
                  <h3>Start</h3>
                  <!--APPETIZERS-->
                  <div id = "starters">
@@ -82,38 +87,43 @@
           </div>
         </div>
 
-    <!--CONTACT-->
+    <!--CONTACT FORM-->
           <div class = "section" id = "contact-section">
              <div ng-controller = "FormController as form">
              
-              <h1 class = "contact-form"><span style = "font-size: 80px;">Hungry?</span></h1>
+              <h1 class = "contact-form">Hungry?</span></h1>
               
                <form name = "contactForm" ng-submit = "form.processForm()">
                    
+            <!--FIRST NAME-->
                     <div id = "firstname-group" class = "form-group" ng-class = "{'has-error': 'first_name_error'}">
                        <input placeholder = "First name" class = "contact-form" type = "text" name = "first_name" ng-model = "form.formData.first_name"></input>
                        <span class="help-block" ng-show="errorFirstName"></span>
                     </div>
 
+            <!--LAST NAME-->
                     <div id = "lastname-group" class = "form-group" ng-class = "{'has-error': 'last_name_error'}">
                        <input placeholder = "Last name" class = "contact-form" type = "text" name = "last_name" ng-model = "form.formData.last_name"></input>
                         <span class="help-block" ng-show="errorLastName"></span>
                     </div>
-
+                    
+            <!--EMAIL-->
                     <div id = "email-group" class = "form-group" ng-class = "{'has-error': 'email_error'}">
                         <input placeholder = "Email" class = "contact-form" type = "email" name = "email" ng-model = "form.formData.email"></input>
                         <span class="help-block" ng-show="errorEmail"></span>
                     </div>
 
                     <br><br>
-
+                    
+            <!--MESSAGE-->
                     <div id = "message-group" class = "form-group" ng-class = "{'has-error': 'message_error'}">
                         <textarea placeholder="What's up?" rows="6" cols="50" name="message" maxlength="300" ng-model = "form.formData.message"></textarea>
                         <span class="help-block" ng-show="errorMessage"></span>
                     </div>
 
                     <br><br>
-
+                    
+            <!--SUBMIT-->
                     <button type="submit" class="btn btn-lg btn-block">Send away</button>
                     
                 </form>
@@ -125,7 +135,6 @@
     </body>
     
     <foot>
-        <script src = "php/mail.php"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="vendor/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
         <script src="vendor/fullpage.js/jquery.fullPage.min.js"></script>

@@ -6,7 +6,7 @@ function MainController() {
     var vm = this;
 
     vm.fullPageOptions = {
-      sectionsColor: ['white', 'white', 'white', 'rgba(0,0,0,0.8)'],
+      sectionsColor: ['white', 'white', 'white', 'rgba(0,0,0,0.9)'],
             anchors: ['home', 'about', 'menu', 'contact'],
             menu: '#nav',
             navigation: false,
@@ -72,5 +72,16 @@ function FormController($http) {
         });
 
     };
+
+//    vm.processForm = function() {
+//        $.ajax({  
+//            type: "POST",  
+//            url: "../php/mail.php",  
+//            data: vm.formData,  
+//            success: function() {  
+//                console.log('yes!');
+//            }  
+//        });
+//    };
 
 }

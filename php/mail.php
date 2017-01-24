@@ -48,3 +48,5 @@ $data = array(); 		// array to pass back data
 	}
 	
 echo json_encode($data);
+
+?>
