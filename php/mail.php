@@ -1,5 +1,7 @@
 <?php
+require 'PHPMailerAutoload.php';
 require_once('class.phpmailer.php');
+
 $errors = array();  	// array to hold validation errors
 $data = array(); 		// array to pass back data
 
@@ -16,7 +18,7 @@ $data = array(); 		// array to pass back data
 
 // return a response ===========================================================
 	// response if there are errors
-	if ( ! empty($errors)) {
+	if (!empty($errors)) {
 		// if there are items in our errors array, return those errors
 		$data['success'] = false;
 		$data['errors']  = $errors;
@@ -29,20 +31,20 @@ $data = array(); 		// array to pass back data
 		$mail->Host = "smtp.gmail.com";
 		$mail->Port = 465; // or 587
 		$mail->IsHTML(true);
-		$mail->Username = ""; //Email that you setup
-		$mail->Password = ""; // Password
+		$mail->Username = "tyler@angert.com"; //Email that you setup
+		$mail->Password = "rabbadabbadoo"; // Password
 		$mail->Subject = "Mail from " . $_POST['last_name'] . ", e-mail: " .$_POST['email']. "";
 		$mail->Body = $_POST['message'];
 		$mail->AddAddress(""); //Pass the e-mail that you setup
-		 if(!$mail->Send())
-		    {
-		    		echo "Mailer Error: " . $mail->ErrorInfo;
-		    }
-		    else
-		    {
-		    	$data['success'] = true;
-	    		$data['message'] = 'Thank you for sending e-mail.';
-		    }
+		 
+        if(!$mail->Send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        }
+        else {
+            $data['success'] = true;
+            $data['message'] = 'Thank you for sending e-mail.';
+        }
 		
 	}
-	echo json_encode($data);
+	
+echo json_encode($data);

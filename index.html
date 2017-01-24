@@ -20,7 +20,7 @@
     
     </head>
     
-    <body ng-controller = "MainController as vm">
+    <body ng-controller = "MainController as main">
           
     <!--NAVIGATION-->
         <div id = "nav-wrapper">
@@ -32,7 +32,7 @@
         </ul>
         </div>
             
-        <div full-page options="vm.fullPageOptions">
+        <div full-page options="main.fullPageOptions">
 
           <br>
 
@@ -50,6 +50,7 @@
           </div>
 
     <!--MENU-->
+         <div ng-controller = "MenuController as vm">
           <div class = "section" id = "menu-section">
             <h1>Menu of {{ vm.date | date:'MMMM d, y' }}</h1>
                  <h3>Start</h3>
@@ -79,39 +80,43 @@
                      <h4> {{ vm.menu.surrender.desc }} </h4>
                  </div>
           </div>
+        </div>
 
     <!--CONTACT-->
           <div class = "section" id = "contact-section">
              <div ng-controller = "FormController as form">
-              <h1 class = "contact-form"><span style = "font-size: 90px;">Contact</span></h1>
+              <h1 class = "contact-form"><span style = "font-size: 80px;">Hungry?</span></h1>
               
-               <form>
+               <form name = "contactForm" ng-submit = "form.processForm()">
+                   
                     <div id = "firstname-group" class = "form-group" ng-class = "{'has-error': 'first_name_error'}">
-                       <h2 class = "contact-form"><input type = "text" name = "first_name" placeholder = "First name" ng-model = "form.formData.firstName"></h2>
+                       <input placeholder = "First name" class = "contact-form" type = "text" name = "first_name" ng-model = "form.formData.firstName"></input>
                        <span class="help-block" ng-show="errorFirstName"></span>
                     </div>
 
                     <div id = "lastname-group" class = "form-group" ng-class = "{'has-error': 'last_name_error'}">
-                       <h2 class = "contact-form"><input type = "text" name = "last_name" placeholder = "Last name" ng-model = "form.formData.lastName"></h2>
+                       <input placeholder = "Last name" class = "contact-form" type = "text" name = "last_name" ng-model = "form.formData.lastName"></input>
                         <span class="help-block" ng-show="errorLastName"></span>
                     </div>
 
                     <div id = "email-group" class = "form-group" ng-class = "{'has-error': 'email_error'}">
-                        <h2 class = "contact-form" ><input type = "email" name = "email" placeholder = "Email" ng-model = "form.formData.email"></h2>
+                        <input placeholder = "Email" class = "contact-form" type = "email" name = "email" ng-model = "form.formData.email"></input>
                         <span class="help-block" ng-show="errorEmail"></span>
                     </div>
 
                     <br><br>
 
                     <div id = "message-group" class = "form-group" ng-class = "{'has-error': 'message_error'}">
-                        <textarea rows="6" cols="50" name="message" placeholder="What's up?" maxlength="300" ng-model = "form.formData.message"></textarea>
+                        <textarea placeholder="What's up?" rows="6" cols="50" name="message" maxlength="300" ng-model = "form.formData.message"></textarea>
                         <span class="help-block" ng-show="errorMessage"></span>
                     </div>
 
                     <br><br>
 
                     <button type="submit" class="btn btn-lg btn-block">Send away</button>
+                    
                 </form>
+                
             </div>    
           </div>
         
@@ -119,6 +124,7 @@
     </body>
     
     <foot>
+        <script src = "php/mail.php"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="vendor/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
         <script src="vendor/fullpage.js/jquery.fullPage.min.js"></script>
@@ -130,7 +136,6 @@
         <script src="app/app.module.js"></script>
         <script src="app/app.config.js"></script>
         <script src="app/app.controller.js"></script>
-        <script src = "php/mail.php"></script>
     </foot>
     
     

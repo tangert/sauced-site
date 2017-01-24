@@ -1,4 +1,5 @@
 app.controller('MainController', MainController);
+app.controller('MenuController', MenuController);
 app.controller('FormController', FormController);
 
 function MainController() {
@@ -14,12 +15,14 @@ function MainController() {
             autoScrolling: false
 
     };
+}
 
+function MenuController() {
+    var vm = this;
+    
     vm.date = new Date();
-
-    vm.menu =
-        {
-             starters: [
+    vm.menu = {
+             starters:[
                  {
                  name: "Buttered sunchoke soup",
                  desc: "crushed hazelnuts"
@@ -46,12 +49,17 @@ function MainController() {
 function FormController($http) {
     var vm = this;
     
-    this.formData = {}
+    vm.formData = {
+        first_name: "",
+        last_name: "",
+        email: "",
+        message: ""
+    };
     
-    this.processForm = function() {
+    vm.processForm = function() {
         $http({
             method: 'POST',
-            url: 'mail.php',
+            url: '../php/mail.php',
             data: $.param(this.formData),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
@@ -64,7 +72,7 @@ function FormController($http) {
             }
             
             else {
-                this.message = data.message;
+                vm.message = data.message;
             }
         });
 
