@@ -2,13 +2,18 @@
 require_once('class.phpmailer.php');
 $errors = array();  	// array to hold validation errors
 $data = array(); 		// array to pass back data
+
 // validate the variables ======================================================
-	if (empty($_POST['name']))
-		$errors['name'] = 'Name is required.';
-	if (empty($_POST['superheroAlias']))
-		$errors['superheroAlias'] = 'E-mail is required.';
-	if (empty($_POST['content']))
-		$errors['content'] = 'Message is required.';
+
+	if (empty($_POST['first_name']))
+		$errors['first_name'] = 'First name is required.';
+	if (empty($_POST['last_name']))
+		$errors['last_name'] = 'Last name is required.';
+	if (empty($_POST['email']))
+		$errors['email'] = 'Email is required.';
+	if (empty($_POST['message']))
+		$errors['message'] = 'Message is required.';
+
 // return a response ===========================================================
 	// response if there are errors
 	if ( ! empty($errors)) {
@@ -26,8 +31,8 @@ $data = array(); 		// array to pass back data
 		$mail->IsHTML(true);
 		$mail->Username = ""; //Email that you setup
 		$mail->Password = ""; // Password
-		$mail->Subject = "Y-Web Contact mail from " . $_POST['name'] . ", e-mail: " .$_POST['superheroAlias']. "";
-		$mail->Body = $_POST['content'];
+		$mail->Subject = "Mail from " . $_POST['last_name'] . ", e-mail: " .$_POST['email']. "";
+		$mail->Body = $_POST['message'];
 		$mail->AddAddress(""); //Pass the e-mail that you setup
 		 if(!$mail->Send())
 		    {
