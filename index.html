@@ -85,17 +85,18 @@
     <!--CONTACT-->
           <div class = "section" id = "contact-section">
              <div ng-controller = "FormController as form">
+             
               <h1 class = "contact-form"><span style = "font-size: 80px;">Hungry?</span></h1>
               
                <form name = "contactForm" ng-submit = "form.processForm()">
                    
                     <div id = "firstname-group" class = "form-group" ng-class = "{'has-error': 'first_name_error'}">
-                       <input placeholder = "First name" class = "contact-form" type = "text" name = "first_name" ng-model = "form.formData.firstName"></input>
+                       <input placeholder = "First name" class = "contact-form" type = "text" name = "first_name" ng-model = "form.formData.first_name"></input>
                        <span class="help-block" ng-show="errorFirstName"></span>
                     </div>
 
                     <div id = "lastname-group" class = "form-group" ng-class = "{'has-error': 'last_name_error'}">
-                       <input placeholder = "Last name" class = "contact-form" type = "text" name = "last_name" ng-model = "form.formData.lastName"></input>
+                       <input placeholder = "Last name" class = "contact-form" type = "text" name = "last_name" ng-model = "form.formData.last_name"></input>
                         <span class="help-block" ng-show="errorLastName"></span>
                     </div>
 

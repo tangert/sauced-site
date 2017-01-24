@@ -49,18 +49,13 @@ function MenuController() {
 function FormController($http) {
     var vm = this;
     
-    vm.formData = {
-        first_name: "",
-        last_name: "",
-        email: "",
-        message: ""
-    };
+    vm.formData = {};
     
     vm.processForm = function() {
         $http({
             method: 'POST',
             url: '../php/mail.php',
-            data: $.param(this.formData),
+            data: $.param(vm.formData),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
         
