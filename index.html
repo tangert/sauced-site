@@ -39,7 +39,7 @@
 
     <!--HOME-->
           <div class = "section active" id = "home-section">
-             <h1> Sauced<span style = "color: crimson">.</span></h1>
+             <h1 id = "sauced-title">Sauced<span style = "color: crimson">.</span></h1>
              <h4> a supper club</h4>
 
           </div>
@@ -91,7 +91,7 @@
           <div class = "section" id = "contact-section">
              <div ng-controller = "FormController as form">
              
-              <h1 class = "contact-form">Hungry?</span></h1>
+              <h1 class = "contact-form" id = "contact-title">Hungry?</span></h1>
               
                <form name = "contactForm" ng-submit = "form.processForm()">
                    
@@ -117,7 +117,7 @@
                     
             <!--MESSAGE-->
                     <div id = "message-group" class = "form-group" ng-class = "{'has-error': 'message_error'}">
-                        <textarea placeholder="What's up?" rows="6" cols="50" name="message" maxlength="300" ng-model = "form.formData.message"></textarea>
+                        <textarea placeholder="What's up?" rows="3" cols="50" name="message" maxlength="300" ng-model = "form.formData.message"></textarea>
                         <span class="help-block" ng-show="errorMessage"></span>
                     </div>
 

@@ -54,6 +54,7 @@
 
     #home-section h4 {
         font-size: 50px;
+        tranistion: 0.25s linear;
     }
 
     img {
@@ -111,6 +112,14 @@
         color: crimson;
     }
 
+    #menu-section h2 {
+        font-size: 30px;
+    }
+
+    #menu-section h4 {
+        font-size: 20px;
+    }
+
     #date {
         font-size: 20px;
     }
@@ -135,7 +144,7 @@
 
     #starters:hover, #share:hover, #surrender:hover {
         transform:scale(1.1);
-}
+    }
 
 /*Contact styling*/
     #contact-section {

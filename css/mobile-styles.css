@@ -1,5 +1,50 @@
 @media screen and (max-width:500px) {
 /*    Mobile styles */
     
+    #home-section h1 {
+        font-size: 100px;
+    }
     
+    #home-section h4 {
+        font-size: 25px;
+    }
+    
+    #about-section h1 {
+        font-size: 70px;
+        color: white;
+        margin-top: -10%;
+        transition: 0.15s linear;
+    }
+
+    #about-section p {
+        font-size: 20px;
+        font-family: gotham-light;
+        color: azure;
+    }
+    
+     #menu-section h1 {
+        font-size: 50px;
+        transition: 0.25s linear;
+        margin-bottom: -20px;
+    }
+    
+    #menu-section h2 {
+        font-size: 22px;
+    }
+
+    #menu-section h4 {
+        font-size: 15px;
+    }
+    
+    #starters:hover, #share:hover, #surrender:hover {
+        transform:scale(1.05);
+    }
+    
+    #contact-section h1 {
+        font-size: 40px;
+    }
+    
+    textarea {
+        height: 50%;
+    }
 }
