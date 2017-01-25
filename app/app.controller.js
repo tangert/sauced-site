@@ -15,6 +15,7 @@ function MainController() {
             autoScrolling: false
 
     };
+    
 }
 
 function MenuController() {
@@ -54,7 +55,7 @@ function FormController($http) {
     vm.processForm = function() {
         $http({
             method: 'POST',
-            url: '../php/mail.php',
+            url: '/php/mail.php',
             data: $.param(vm.formData),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })

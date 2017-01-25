@@ -48,6 +48,12 @@
         transition: 0.25s linear;
     }
 
+    #sauced-description {
+        margin-top:-30px;
+        opacity: 0.8;
+
+    }
+
     #home-section h1:hover {
         color: crimson;
     }
@@ -57,9 +63,8 @@
         tranistion: 0.25s linear;
     }
 
-    img {
-        height: 100%;
-        width: 100%;
+    #home-section img {
+        margin-top: -60px;
     }
 
 /*About styling*/
@@ -91,6 +96,15 @@
         font-size: inherit;
         transition: 0.15s linear;
     }
+    
+#drip-svg {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+    top:0;
+    left:0;
+}
 
 /*Menu styling*/
     #menu-section {
