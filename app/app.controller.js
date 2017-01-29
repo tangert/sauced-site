@@ -61,28 +61,29 @@ function FormController($http) {
         })
         
         .success(function (data) {
+            
             console.log(data);
             
             if (!data.success) {
-                console.log(data);
-            }
-            
+                //binding errors to data.
+                vm.error_first_name = data.errors.first_name;
+                vm.error_last_name = data.errors.last_name;
+                vm.error_email = data.errors.email;
+                vm.error_message = data.errors.message;
+                
+                console.log(data.errors.first_name);
+                console.log(data.errors.last_name);
+                console.log(data.errors.email);
+                console.log(data.errors.message);
+            } 
             else {
-                vm.message = data.message;
+                // if successful, bind success message to message
+                console.log(data);
+                console.log(data.message);
+                vm.formData.message = data.message;
             }
         });
 
     };
-
-//    vm.processForm = function() {
-//        $.ajax({  
-//            type: "POST",  
-//            url: "../php/mail.php",  
-//            data: vm.formData,  
-//            success: function() {  
-//                console.log('yes!');
-//            }  
-//        });
-//    };
 
 }

@@ -41,7 +41,7 @@
           <div class = "section active" id = "home-section">
              <h1 id = "sauced-title">Sauced<span style = "color: crimson">.</span></h1>
              <h4 id= "sauced-description">a supper club</h4>
-              <animate-svg file-path = "images/sauced-stroke.svg" ></animate-svg>
+<!--              <animate-svg file-path = "images/sauced-stroke.svg" ></animate-svg>-->
           </div>
 
     <!--ABOUT-->
@@ -58,8 +58,9 @@
 
             <h1 class = "section-header" >Menu</h1>
                 <h2 id = "date">{{ vm.date | date:'MMMM d, y' }}</h2>
+                
+                <!--APPETIZERS-->
                  <h3>Start</h3>
-                 <!--APPETIZERS-->
                  <div id = "starters">
                      <div ng-repeat = "starter in vm.menu.starters">
                          <h2> {{ starter.name }} </h2>
@@ -127,7 +128,6 @@
                     <button type="submit" class="btn btn-lg btn-block">Get sauced</button>
                     
                 </form>
-                
             </div>    
           </div>
         

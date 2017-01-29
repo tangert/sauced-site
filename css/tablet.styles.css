@@ -1,5 +1,12 @@
 @media screen and (min-width:501px) and (max-width:999px) {
 /*    Tablet styles */
     
+    #home-section h1 {
+        font-size: 150px;
+    }
+    
+    #home-section h4 {
+        font-size: 50px;
+    }
     
 }

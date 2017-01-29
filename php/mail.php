@@ -1,6 +1,7 @@
 <?php
 require 'PHPMailerAutoload.php';
-require_once('class.phpmailer.php');
+require 'class.phpmailer.php';
+require 'class.smtp.php';
 
 $errors = array();  	// array to hold validation errors
 $data = array(); 		// array to pass back data
@@ -25,28 +26,26 @@ $data = array(); 		// array to pass back data
 		
 	} else {
 		$mail = new PHPMailer(); // create a new object
-		$mail->IsSMTP(); // enable SMTP
 		$mail->SMTPAuth = true; // authentication enabled
 		$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
 		$mail->Host = "smtp.gmail.com";
-		$mail->Port = 465; // or 587
+		$mail->Port = 587;
 		$mail->IsHTML(true);
 		$mail->Username = "tyler@angert.com"; //Email that you setup
 		$mail->Password = "rabbadabbadoo"; // Password
+        
 		$mail->Subject = "Mail from " . $_POST['last_name'] . ", e-mail: " .$_POST['email']. "";
 		$mail->Body = $_POST['message'];
-		$mail->AddAddress(""); //Pass the e-mail that you setup
+		$mail->AddAddress("tyler@angert.com"); //Pass the e-mail that you setup
 		 
         if(!$mail->Send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;
         }
         else {
             $data['success'] = true;
-            $data['message'] = 'Thank you for sending e-mail.';
+            $data['message'] = 'We\'ll get back to you shortly.';
         }
 		
 	}
 	
 echo json_encode($data);
-
-?>
