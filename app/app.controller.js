@@ -4,7 +4,6 @@ app.controller('FormController', FormController);
 
 function MainController() {
     var vm = this;
-
     vm.fullPageOptions = {
       sectionsColor: ['white', 'white', 'white', 'rgba(0,0,0,0.9)'],
             anchors: ['home', 'about', 'menu', 'contact'],
@@ -13,14 +12,11 @@ function MainController() {
             navigationPosition: 'right',
             scrollingSpeed: 500,
             autoScrolling: false
-
     };
-    
 }
 
 function MenuController() {
     var vm = this;
-    
     vm.date = new Date();
     vm.menu = {
              starters:[
@@ -34,36 +30,35 @@ function MenuController() {
                  }
              ],
 
-            share: {
+            share: [
+                {
                 name: "French roast chicken",
                 desc: "creamy morel sauce"
-            },
+                }
+            ],
 
-            surrender: {
+            surrender:[
+                {
                 name: "Vanilla affogato",
                 desc: "chocolate ganache + biscotti"
-            }
-
+                }
+            ]
         };
 }
 
 function FormController($http) {
     var vm = this;
-    
     vm.formData = {};
     
     vm.processForm = function() {
         $http({
             method: 'POST',
-            url: '/php/mail.php',
+            url: 'php/mail.php',
             data: $.param(vm.formData),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
         
-        .success(function (data) {
-            
-            console.log(data);
-            
+        .success(function (data) {            
             if (!data.success) {
                 //binding errors to data.
                 vm.error_first_name = data.errors.first_name;
@@ -78,12 +73,17 @@ function FormController($http) {
             } 
             else {
                 // if successful, bind success message to message
+                console.log("We got it");
+                console.log(vm.formData);
                 console.log(data);
                 console.log(data.message);
+                
+                vm.formData.first_name = "";
+                vm.formData.last_name = "";
+                vm.formData.email = "";
                 vm.formData.message = data.message;
             }
         });
 
     };
-
 }

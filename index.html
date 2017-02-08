@@ -41,7 +41,6 @@
           <div class = "section active" id = "home-section">
              <h1 id = "sauced-title">Sauced<span style = "color: crimson">.</span></h1>
              <h4 id= "sauced-description">a supper club</h4>
-<!--              <animate-svg file-path = "images/sauced-stroke.svg" ></animate-svg>-->
           </div>
 
     <!--ABOUT-->
@@ -57,6 +56,7 @@
             <div ng-controller = "MenuController as vm">
 
             <h1 class = "section-header" >Menu</h1>
+                <!--DATE-->
                 <h2 id = "date">{{ vm.date | date:'MMMM d, y' }}</h2>
                 
                 <!--APPETIZERS-->
@@ -73,8 +73,10 @@
                  <!--MAIN COURSE-->
                  <h3>Share</h3>
                  <div id = "share">
-                     <h2> {{ vm.menu.share.name }} </h2>
-                     <h4> {{ vm.menu.share.desc }} </h4>
+                    <div ng-repeat = "share in vm.menu.share">
+                         <h2> {{ share.name }} </h2>
+                         <h4> {{ share.desc }} </h4>
+                    </div>
                  </div>
 
                  <br><br>
@@ -82,8 +84,10 @@
                  <!--DESERT-->
                  <h3>Surrender</h3>
                  <div id = "surrender">
-                     <h2> {{ vm.menu.surrender.name }} </h2>
-                     <h4> {{ vm.menu.surrender.desc }} </h4>
+                    <div ng-repeat = "surrender in vm.menu.surrender">
+                         <h2> {{ surrender.name }} </h2>
+                         <h4> {{ surrender.desc }} </h4>
+                    </div>
                  </div>
           </div>
         </div>
@@ -98,19 +102,37 @@
                    
             <!--FIRST NAME-->
                     <div id = "firstname-group" class = "form-group" ng-class = "{'has-error': 'first_name_error'}">
-                       <input placeholder = "First name" class = "contact-form" type = "text" name = "first_name" ng-model = "form.formData.first_name"></input>
+                       <input
+                       placeholder = "First name"
+                       class = "contact-form"
+                       type = "text"
+                       name = "first_name"
+                       ng-model = "form.formData.first_name">
+                       </input>
                        <span class="help-block" ng-show="errorFirstName"></span>
                     </div>
 
             <!--LAST NAME-->
                     <div id = "lastname-group" class = "form-group" ng-class = "{'has-error': 'last_name_error'}">
-                       <input placeholder = "Last name" class = "contact-form" type = "text" name = "last_name" ng-model = "form.formData.last_name"></input>
+                       <input
+                       placeholder = "Last name"
+                       class = "contact-form"
+                       type = "text"
+                       name = "last_name"
+                       ng-model = "form.formData.last_name">
+                       </input>
                         <span class="help-block" ng-show="errorLastName"></span>
                     </div>
                     
             <!--EMAIL-->
                     <div id = "email-group" class = "form-group" ng-class = "{'has-error': 'email_error'}">
-                        <input placeholder = "Email" class = "contact-form" type = "email" name = "email" ng-model = "form.formData.email"></input>
+                        <input
+                        placeholder = "Email"
+                        class = "contact-form"
+                        type = "email"
+                        name = "email"
+                        ng-model = "form.formData.email">
+                        </input>
                         <span class="help-block" ng-show="errorEmail"></span>
                     </div>
 
@@ -118,7 +140,14 @@
                     
             <!--MESSAGE-->
                     <div id = "message-group" class = "form-group" ng-class = "{'has-error': 'message_error'}">
-                        <textarea placeholder="What's up?" rows="3" cols="50" name="message" maxlength="300" ng-model = "form.formData.message"></textarea>
+                        <textarea
+                        placeholder="What's up?"
+                        rows="3"
+                        cols="50"
+                        name="message"
+                        maxlength="300"
+                        ng-model = "form.formData.message">
+                        </textarea>
                         <span class="help-block" ng-show="errorMessage"></span>
                     </div>
 

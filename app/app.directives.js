@@ -8,13 +8,11 @@ function animateSvg() {
         scope: {
             filePath: '@'
         },
-        template: "<img src = {{ filePath }}></img>",
+        template: "<img src = {{ filePath }} >",
         link: animate
     }
 };
 
 function animate(scope, element, attrs) {
-    
-    
     console.log("Animation called");
 };

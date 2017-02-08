@@ -7,7 +7,6 @@ $errors = array();  	// array to hold validation errors
 $data = array(); 		// array to pass back data
 
 // validate the variables ======================================================
-
 	if (empty($_POST['first_name']))
 		$errors['first_name'] = 'First name is required.';
 	if (empty($_POST['last_name']))
@@ -18,6 +17,7 @@ $data = array(); 		// array to pass back data
 		$errors['message'] = 'Message is required.';
 
 // return a response ===========================================================
+
 	// response if there are errors
 	if (!empty($errors)) {
 		// if there are items in our errors array, return those errors
@@ -49,3 +49,5 @@ $data = array(); 		// array to pass back data
 	}
 	
 echo json_encode($data);
+
+?>
