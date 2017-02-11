@@ -46,7 +46,7 @@
     <!--ABOUT-->
           <div class = "section" id = "about-section">
               <h1 class = "section-header">About</h1>
-              <p>We are a few Emory students who are passionate about good food. Today, we introduce <span class = "sauce-style">Sauced</span>, a supper club for the money-conscious millenial who loves to eat well and escape the daily routine of Chipotle or Starbucks.</p>
+              <p>We are a few Emory students who are passionate about good food. Today, we introduce <span class = "sauce-style">Sauced</span>, a supper club for people who want to eat well and escape the daily routine of Chipotle and Kaldis.</p>
               
               
           </div>
@@ -97,8 +97,10 @@
              <div ng-controller = "FormController as form">
              
               <h1 class = "contact-form" id = "contact-title">Hungry?</span></h1>
+              <h2>Price starts at $17/person.</h2>
               
-               <form name = "contactForm" ng-submit = "form.mailGunSend()">
+               <form name = "contactForm" ng-submit = "form.mailGunSend()" action="https://formspree.io/tyler@eatsauced.com"
+      method="POST">
                    
             <!--FIRST NAME-->
                     <div id = "firstname-group" class = "form-group" ng-class = "{'has-error': 'first_name_error'}">
@@ -130,7 +132,7 @@
                         placeholder = "Email"
                         class = "contact-form"
                         type = "email"
-                        name = "email"
+                        name="email"
                         ng-model = "form.formData.email">
                         </input>
                         <span class="help-block" ng-show="errorEmail"></span>
@@ -141,9 +143,7 @@
             <!--MESSAGE-->
                     <div id = "message-group" class = "form-group" ng-class = "{'has-error': 'message_error'}">
                         <textarea
-                        placeholder="What's up?"
-                        rows="3"
-                        cols="50"
+                        placeholder="Tell us the next Friday you're free to eat. Also tell us any allergies."
                         name="message"
                         maxlength="300"
                         ng-model = "form.formData.message">
@@ -153,9 +153,10 @@
 
                     <br><br>
                     
+                    <input type="hidden" name="_next" value="index.html#menu"/>
+                    
             <!--SUBMIT-->
                     <button type="submit" class="btn btn-lg btn-block" >Get sauced</button>
-                    
                 </form>
             </div>    
           </div>

@@ -18,7 +18,7 @@
         display:inline-block;
         font-family: baskerville;
         z-index: 999;
-        padding: 5px;
+        padding: 3px;
         font-size: 15px;
 
     }
@@ -74,7 +74,28 @@
         font-size: 40px;
     }
     
+    input {
+        background-color: inherit;
+        border: 0;
+        border-bottom: 2px solid rgba(255,255,255,0.7);
+        outline: 0;
+        width: 100%;
+        font-family: baskerville;
+        font-size: 25px;
+    }
+    
+    .btn {
+        padding: 10px;
+        font-size: 30px;
+        background-color: inherit;
+        border-color: white;
+        transition: 0.2s;
+        font-family: baskerville;
+        margin-top: -40px;
+    }
+    
     textarea {
-        height: 50%;
+        height: 3em;
+        font-size: 25px;
     }
 }

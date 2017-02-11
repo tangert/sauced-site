@@ -34,7 +34,7 @@ $data = array(); 		// array to pass back data
 		$mail->IsHTML(true);
         
 		$mail->Username = "tyler@angert.com"; //Email that you setup
-		$mail->Password = "rabbadabbadoo"; // Password
+		$mail->Password = ""; // Password
         
 		$mail->Subject = "Mail from " . $_POST['last_name'] . ", e-mail: " .$_POST['email']. "";
 		$mail->Body = $_POST['message'];

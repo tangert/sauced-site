@@ -88,27 +88,6 @@ function FormController($http) {
 
     };
     
-    //send grid API
-//    vm.sendGrid = function() {
-//        return {
-//            $send: function(api_user, api_key, to, toname, subject, text, from) {
-//                var method = 'GET';
-//                var url = "https://api.sendgrid.com/api/mail.send.json?";
-//                $http({
-//                    method: method,
-//                    url: url + "api_user=" + api_user +
-//                        "&api_key=" + api_key +
-//                        "&to=" + to +
-//                        "&subject=" + subject +
-//                        "&text=" + text +
-//                        "&from=" + from
-//                }).
-//                success(function(data, status) {}).
-//                error(function(data, status) {});
-//            }
-//        };
-//    };
-//    
 //    var mailgunUrl = "YOUR_DOMAIN_HERE";
 //    var mailgunApiKey = window.btoa("api:key-YOUR_API_KEY_HERE")
 //    var fullEmailName = vm.formData.first_name + " " + vm.formData.last_name;
