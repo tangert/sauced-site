@@ -163,7 +163,7 @@
 /*Box shadow: horizontal, vertical, blur, spread*/
     #starters:hover, #share:hover, #surrender:hover {
         transform:scale(1.05);
-        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.30);
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.30);
         border-radius: 10px;
     }
 
