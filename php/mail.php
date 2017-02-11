@@ -26,11 +26,13 @@ $data = array(); 		// array to pass back data
 		
 	} else {
 		$mail = new PHPMailer(); // create a new object
+        
 		$mail->SMTPAuth = true; // authentication enabled
 		$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
 		$mail->Host = "smtp.gmail.com";
 		$mail->Port = 587;
 		$mail->IsHTML(true);
+        
 		$mail->Username = "tyler@angert.com"; //Email that you setup
 		$mail->Password = "rabbadabbadoo"; // Password
         
@@ -43,7 +45,6 @@ $data = array(); 		// array to pass back data
         }
         else {
             $data['success'] = true;
-            $data['message'] = 'We\'ll get back to you shortly.';
         }
 		
 	}

@@ -97,19 +97,20 @@
         transition: 0.15s linear;
     }
     
-#drip-svg {
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    position: fixed;
-    top:0;
-    left:0;
-}
+    #drip-svg {
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        position: fixed;
+        top:0;
+        left:0;
+    }
 
 /*Menu styling*/
     #menu-section {
         text-align: center;
     }
+
 
     #menu-section p, h4 {
         font-family: gotham-light;
@@ -144,7 +145,7 @@
         text-transform: lowercase;
         color: indianred;
         font-size: 20px;
-        transition: 0.15s linear;
+        transition: 0.15s linear;        
     }
 
     h4 {
@@ -153,13 +154,19 @@
     }
 
     #starters, #share, #surrender {
+        padding:20px;
         margin-top: -15px;
-        transition: 0.3s ease-in-out;
+        transition: 0.25s ease-in-out;
+        display: inline-block;
     }
 
+/*Box shadow: horizontal, vertical, blur, spread*/
     #starters:hover, #share:hover, #surrender:hover {
-        transform:scale(1.1);
+        transform:scale(1.05);
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.30);
+        border-radius: 10px;
     }
+
 
 /*Contact styling*/
     #contact-section {

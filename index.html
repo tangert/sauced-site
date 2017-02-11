@@ -61,7 +61,7 @@
                 
                 <!--APPETIZERS-->
                  <h3>Start</h3>
-                 <div id = "starters">
+                 <div id = "starters" class = "menu-part">
                      <div ng-repeat = "starter in vm.menu.starters">
                          <h2> {{ starter.name }} </h2>
                          <h4> {{ starter.desc }} </h4>
@@ -72,8 +72,8 @@
 
                  <!--MAIN COURSE-->
                  <h3>Share</h3>
-                 <div id = "share">
-                    <div ng-repeat = "share in vm.menu.share">
+                 <div id = "share" class = "menu-part">                     
+                    <div ng-repeat = "share in vm.menu.shares">
                          <h2> {{ share.name }} </h2>
                          <h4> {{ share.desc }} </h4>
                     </div>
@@ -83,8 +83,8 @@
 
                  <!--DESERT-->
                  <h3>Surrender</h3>
-                 <div id = "surrender">
-                    <div ng-repeat = "surrender in vm.menu.surrender">
+                 <div id = "surrender" class = "menu-part">
+                    <div ng-repeat = "surrender in vm.menu.surrenders">
                          <h2> {{ surrender.name }} </h2>
                          <h4> {{ surrender.desc }} </h4>
                     </div>
@@ -98,7 +98,7 @@
              
               <h1 class = "contact-form" id = "contact-title">Hungry?</span></h1>
               
-               <form name = "contactForm" ng-submit = "form.processForm()">
+               <form name = "contactForm" ng-submit = "form.mailGunSend()">
                    
             <!--FIRST NAME-->
                     <div id = "firstname-group" class = "form-group" ng-class = "{'has-error': 'first_name_error'}">
@@ -154,7 +154,7 @@
                     <br><br>
                     
             <!--SUBMIT-->
-                    <button type="submit" class="btn btn-lg btn-block">Get sauced</button>
+                    <button type="submit" class="btn btn-lg btn-block" >Get sauced</button>
                     
                 </form>
             </div>    

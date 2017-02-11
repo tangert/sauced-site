@@ -30,14 +30,14 @@ function MenuController() {
                  }
              ],
 
-            share: [
+            shares: [
                 {
                 name: "French roast chicken",
                 desc: "creamy morel sauce"
                 }
             ],
 
-            surrender:[
+            surrenders:[
                 {
                 name: "Vanilla affogato",
                 desc: "chocolate ganache + biscotti"
@@ -53,12 +53,15 @@ function FormController($http) {
     vm.processForm = function() {
         $http({
             method: 'POST',
-            url: 'php/mail.php',
+            url: '/php/mail.php',
             data: $.param(vm.formData),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
         
-        .success(function (data) {            
+        .success(function (data) {    
+            
+            console.log(data);
+            
             if (!data.success) {
                 //binding errors to data.
                 vm.error_first_name = data.errors.first_name;
@@ -75,8 +78,6 @@ function FormController($http) {
                 // if successful, bind success message to message
                 console.log("We got it");
                 console.log(vm.formData);
-                console.log(data);
-                console.log(data.message);
                 
                 vm.formData.first_name = "";
                 vm.formData.last_name = "";
@@ -86,4 +87,46 @@ function FormController($http) {
         });
 
     };
+    
+    //send grid API
+//    vm.sendGrid = function() {
+//        return {
+//            $send: function(api_user, api_key, to, toname, subject, text, from) {
+//                var method = 'GET';
+//                var url = "https://api.sendgrid.com/api/mail.send.json?";
+//                $http({
+//                    method: method,
+//                    url: url + "api_user=" + api_user +
+//                        "&api_key=" + api_key +
+//                        "&to=" + to +
+//                        "&subject=" + subject +
+//                        "&text=" + text +
+//                        "&from=" + from
+//                }).
+//                success(function(data, status) {}).
+//                error(function(data, status) {});
+//            }
+//        };
+//    };
+//    
+//    var mailgunUrl = "YOUR_DOMAIN_HERE";
+//    var mailgunApiKey = window.btoa("api:key-YOUR_API_KEY_HERE")
+//    var fullEmailName = vm.formData.first_name + " " + vm.formData.last_name;
+//  
+//    vm.mailGunSend = function() {
+//        $http({
+//              method: "POST",
+//              url: "https://api.mailgun.net/v3/" + mailgunUrl + "/messages",
+//              headers: {
+//                "Content-Type": "application/x-www-form-urlencoded",
+//                "Authorization": "Basic " + mailgunApiKey
+//              },
+//              data: "from=" + vm.formData.email + "&to=" + "tyler@angert.com" + "&subject=" + this.fullEmailName + "is hungry!" + "&text=" + vm.formData.message;
+//            }).then(function(success) {
+//              console.log("SUCCESS " + JSON.stringify(success));
+//            }, function(error) {
+//              console.log("ERROR " + JSON.stringify(error));
+//            });
+//      };
+    
 }
