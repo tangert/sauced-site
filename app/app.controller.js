@@ -93,24 +93,16 @@ function FormController($http) {
 
     };
     
-//    var mailgunUrl = "YOUR_DOMAIN_HERE";
-//    var mailgunApiKey = window.btoa("api:key-YOUR_API_KEY_HERE")
-//    var fullEmailName = vm.formData.first_name + " " + vm.formData.last_name;
-//  
-//    vm.mailGunSend = function() {
-//        $http({
-//              method: "POST",
-//              url: "https://api.mailgun.net/v3/" + mailgunUrl + "/messages",
-//              headers: {
-//                "Content-Type": "application/x-www-form-urlencoded",
-//                "Authorization": "Basic " + mailgunApiKey
-//              },
-//              data: "from=" + vm.formData.email + "&to=" + "tyler@angert.com" + "&subject=" + this.fullEmailName + "is hungry!" + "&text=" + vm.formData.message;
-//            }).then(function(success) {
-//              console.log("SUCCESS " + JSON.stringify(success));
-//            }, function(error) {
-//              console.log("ERROR " + JSON.stringify(error));
-//            });
-//      };
+    vm.formSpree = function() {
+        $http({
+            url: "http://formspree.io/tyler@eatsauced.com",
+            data: $.param(vm.formData),
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        });
+    };
     
 }

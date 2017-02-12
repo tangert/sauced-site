@@ -100,8 +100,9 @@
              
               <h1 class = "contact-form" id = "contact-title">Hungry?</span></h1>
               <h2>All donations go towards buying ingredients. Usual range is $15-20.</h2>
+              <h4>**currently closed during Mardi Gras weekend**</h4>
               
-               <form name = "contactForm" ng-submit = "form.mailGunSend()" action="https://formspree.io/tyler@eatsauced.com"
+               <form name = "contactForm" ng-submit = "form.mailGun()" action="https://formspree.io/tyler@eatsauced.com"
       method="POST">
                    
             <!--FIRST NAME-->
@@ -111,7 +112,8 @@
                        class = "contact-form"
                        type = "text"
                        name = "first_name"
-                       ng-model = "form.formData.first_name">
+                       ng-model = "form.formData.first_name"
+                       required>
                        </input>
                        <span class="help-block" ng-show="errorFirstName"></span>
                     </div>
@@ -123,7 +125,8 @@
                        class = "contact-form"
                        type = "text"
                        name = "last_name"
-                       ng-model = "form.formData.last_name">
+                       ng-model = "form.formData.last_name"
+                       required>
                        </input>
                         <span class="help-block" ng-show="errorLastName"></span>
                     </div>
@@ -135,7 +138,8 @@
                         class = "contact-form"
                         type = "email"
                         name="email"
-                        ng-model = "form.formData.email">
+                        ng-model = "form.formData.email"
+                        required>
                         </input>
                         <span class="help-block" ng-show="errorEmail"></span>
                     </div>
@@ -148,7 +152,8 @@
                         placeholder="When's the next Friday you're free to eat? Any allergies?"
                         name="message"
                         maxlength="300"
-                        ng-model = "form.formData.message">
+                        ng-model = "form.formData.message"
+                        required>
                         </textarea>
                         <span class="help-block" ng-show="errorMessage"></span>
                     </div>
