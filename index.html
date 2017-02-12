@@ -46,7 +46,9 @@
     <!--ABOUT-->
           <div class = "section" id = "about-section">
               <h1 class = "section-header">About</h1>
-              <p>We are a few Emory students who are passionate about good food. Today, we introduce <span class = "sauce-style">Sauced</span>, a supper club for people who want to eat well and escape the daily routine of Chipotle and Kaldis.</p>
+              <p>We are a few Emory students who are passionate about good food. Today, we introduce <span class = "sauce-style">Sauced</span>, a pseudo supper club for people who want to eat well and escape the daily routine of fast food and fast conversations.</p>
+              
+              <p><span class = "sauce-style">Sauced</span> is a community where friends can get together, cook together, hang out, and most importantly, feel at home.</p>
               
               
           </div>
@@ -97,7 +99,7 @@
              <div ng-controller = "FormController as form">
              
               <h1 class = "contact-form" id = "contact-title">Hungry?</span></h1>
-              <h2>Price starts at $17/person.</h2>
+              <h2>All donations go towards buying ingredients. This is the initial mailing list.</h2>
               
                <form name = "contactForm" ng-submit = "form.mailGunSend()" action="https://formspree.io/tyler@eatsauced.com"
       method="POST">
@@ -143,7 +145,7 @@
             <!--MESSAGE-->
                     <div id = "message-group" class = "form-group" ng-class = "{'has-error': 'message_error'}">
                         <textarea
-                        placeholder="Tell us the next Friday you're free to eat. Also tell us any allergies."
+                        placeholder="When's the next Friday you're free to eat? Any allergies?"
                         name="message"
                         maxlength="300"
                         ng-model = "form.formData.message">
