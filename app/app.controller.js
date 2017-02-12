@@ -21,26 +21,26 @@ function MenuController() {
     vm.menu = {
              starters:[
                  {
-                 name: "Buttered sunchoke soup",
-                 desc: "crushed hazelnuts"
+                 name: "Roasted winter vegetables",
+                 desc: "labneh + lime + harissa"
                  },
                  {
-                 name: "Blood orange + burrata salad",
-                 desc: "sherry vinaigrette"
+                 name: "Potato and egg raviolo",
+                 desc: "brown butter + chicken glaze + pecorino romano"
                  }
              ],
 
             shares: [
                 {
-                name: "French roast chicken",
-                desc: "creamy morel sauce"
+                name: "Roasted duck breast",
+                desc: "spicy cherry sauce + honey aioli"
                 }
             ],
 
             surrenders:[
                 {
-                name: "Vanilla affogato",
-                desc: "chocolate ganache + biscotti"
+                name: "Strawberry semifreddo",
+                desc: "New York cheesecake"
                 }
             ]
         };
