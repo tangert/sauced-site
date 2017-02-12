@@ -17,7 +17,12 @@ function MainController() {
 
 function MenuController() {
     var vm = this;
-    vm.date = new Date();
+    var dayOfWeek = 5;//friday
+    var date = new Date();
+    date.setDate(date.getDate() + (dayOfWeek + 7 - date.getDay()) % 7);
+    
+    vm.date = date;
+    
     vm.menu = {
              starters:[
                  {
