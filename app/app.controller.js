@@ -21,25 +21,25 @@ function MenuController() {
     vm.menu = {
              starters:[
                  {
-                 name: "Roasted winter vegetables",
+                 name: "Roasted Winter Vegetables",
                  desc: "labneh + lime + harissa"
                  },
                  {
-                 name: "Potato and egg raviolo",
+                 name: "Potato and Egg Raviolo",
                  desc: "brown butter + chicken glaze + pecorino romano"
                  }
              ],
 
             shares: [
                 {
-                name: "Roasted duck breast",
+                name: "Roasted Duck Breast",
                 desc: "spicy cherry sauce + honey aioli"
                 }
             ],
 
             surrenders:[
                 {
-                name: "Strawberry semifreddo",
+                name: "Strawberry Semifreddo",
                 desc: "New York cheesecake"
                 }
             ]
