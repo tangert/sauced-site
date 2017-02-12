@@ -65,7 +65,8 @@
 
     #home-section img {
         margin-top: -60px;
-    }
+        width: 60%;
+}
 
 /*About styling*/
     #about-section {

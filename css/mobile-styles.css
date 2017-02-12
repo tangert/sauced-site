@@ -35,6 +35,11 @@
         font-size: 25px;
     }
     
+    #home-section img {
+        margin-top: -40px;
+        width: 90%;
+    }
+    
     #about-section h1 {
         font-size: 70px;
         color: white;

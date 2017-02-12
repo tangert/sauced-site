@@ -9,6 +9,11 @@
         font-size: 50px;
     }
     
+      #home-section img {
+        margin-top: -60px;
+        width: 70%;
+    }
+    
     /*Contact styling*/
     #contact-section {
         color: white;
