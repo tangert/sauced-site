@@ -26,26 +26,26 @@ function MenuController() {
     vm.menu = {
              starters:[
                  {
-                 name: "Roasted Winter Vegetables",
-                 desc: "labneh + lime + harissa"
+                 name: "Cheese Board with Pickled Vegetables",
+                 desc: "candied fruit"
                  },
                  {
-                 name: "Potato and Egg Raviolo",
-                 desc: "brown butter + chicken glaze + pecorino romano"
+                 name: "Early Spring Risotto",
+                 desc: "parmigiano reggiano"
                  }
              ],
 
             shares: [
                 {
-                name: "Roasted Duck Breast",
-                desc: "spicy cherry sauce + honey aioli"
+                name: "Whole Roasted Market Fish",
+                desc: "ginger zest + lemon curry"
                 }
             ],
 
             surrenders:[
                 {
-                name: "Strawberry Semifreddo",
-                desc: "New York cheesecake"
+                name: "Flourless Chocolate Decadence Cake",
+                desc: "raspberry coulie"
                 }
             ]
         };
