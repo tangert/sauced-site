@@ -26,19 +26,19 @@ function MenuController() {
     vm.menu = {
              starters:[
                  {
-                 name: "Cheese Board with Pickled Vegetables",
-                 desc: "candied fruit"
+                 name: "Charcuterie Board with Pickled Vegetables",
+                 desc: "cheese + fruit"
                  },
                  {
                  name: "Early Spring Risotto",
-                 desc: "parmigiano reggiano"
+                 desc: "pecorino romano"
                  }
              ],
 
             shares: [
                 {
-                name: "Whole Roasted Market Fish",
-                desc: "ginger zest + lemon curry"
+                name: "Whole Roasted Trout",
+                desc: "sumac + hollandaise"
                 }
             ],
 
